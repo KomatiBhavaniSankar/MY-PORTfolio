@@ -1,18 +1,9 @@
-# Welcome to your Lovable project
+# Welcome to your My PORTFOLIO
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/5fcd3334-1ac3-4ede-bda6-639aa9eff5a1
+**URL**: https://komatibhavanisankar.netlify.app/
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/5fcd3334-1ac3-4ede-bda6-639aa9eff5a1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
