@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { useIsMobile } from '../hooks/use-mobile';
-import { Moon, Sun, Github, Mail, Linkedin, ExternalLink, Code, Award, BookOpen, MapPin, Calendar, GraduationCap, Briefcase, Star } from 'lucide-react';
+import { Moon, Sun, Github, Mail, Linkedin, ExternalLink, Code, Award, BookOpen, MapPin, Calendar, GraduationCap, Briefcase, Star, Users } from 'lucide-react';
 
 const Index = () => {
   const [theme, setTheme] = useState('dark');
@@ -22,7 +21,7 @@ const Index = () => {
 
   const stats = [
     { number: "3+", label: "Years Experience" },
-    { number: "50+", label: "Projects" },
+    { number: "15+", label: "Projects" },
     { number: "15+", label: "Technologies" },
     { number: "100%", label: "Passion" }
   ];
@@ -90,21 +89,16 @@ const Index = () => {
     }
   ];
 
-  const timeline = [
+  const leadership = [
     {
-      type: "Experience",
-      title: "Senior Frontend Developer",
-      description: "Led development of user-facing applications serving 10k+ users daily"
-    },
-    {
-      type: "Project",
-      title: "Open Source Contributor",
-      description: "Contributed to popular React libraries with 50+ merged pull requests"
-    },
-    {
-      type: "Achievement",
-      title: "Hackathon Winner",
-      description: "First place in regional hackathon for innovative fintech solution"
+      type: "Leadership",
+      title: "Tech Team Lead - VIVENCIA 2K25",
+      organization: "Malla Reddy College of Engineering and Technology",
+      description: "Led the tech team to design and develop the official fest website featuring live event details and real-time registration. Delivered a responsive, user-friendly platform used by 700+ participants for event sign-ups and information access.",
+      links: {
+        github: "https://github.com/KomatiBhavaniSankar/VIVENCIA-2K25",
+        website: "https://vivenciaet.netlify.app/"
+      }
     }
   ];
 
@@ -137,7 +131,7 @@ const Index = () => {
           <div className="nav-brand">KBS PORTFOLIO</div>
           
           <div className="nav-menu">
-            {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((item, index) => (
+            {['Home', 'About', 'Skills', 'Projects', 'Leadership', 'Education', 'Contact'].map((item, index) => (
               <a
                 key={item}
                 className={`nav-link ${activeSection === item.toLowerCase() ? 'active' : ''}`}
@@ -237,7 +231,7 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="projects-section">
         <div className="container">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">Notable Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div key={index} className="project-card">
@@ -264,18 +258,29 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="experience-section">
+      {/* Leadership Section */}
+      <section id="leadership" className="leadership-section">
         <div className="container">
-          <h2 className="section-title">Experience & Achievements</h2>
-          <div className="timeline">
-            {timeline.map((item, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <div className="achievement-type">{item.type}</div>
-                  <h3 className="achievement-title">{item.title}</h3>
-                  <p className="achievement-description">{item.description}</p>
+          <h2 className="section-title">Leadership & Extracurriculars</h2>
+          <div className="leadership-timeline">
+            {leadership.map((item, index) => (
+              <div key={index} className="leadership-item">
+                <div className="leadership-marker"></div>
+                <div className="leadership-content">
+                  <div className="leadership-type">{item.type}</div>
+                  <h3 className="leadership-title">{item.title}</h3>
+                  <div className="leadership-organization">{item.organization}</div>
+                  <p className="leadership-description">{item.description}</p>
+                  <div className="leadership-links">
+                    <a href={item.links.github} className="leadership-link" target="_blank" rel="noopener noreferrer">
+                      <Github size={isMobile ? 10 : 14} />
+                      <span>GitHub</span>
+                    </a>
+                    <a href={item.links.website} className="leadership-link" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={isMobile ? 10 : 14} />
+                      <span>Website</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
